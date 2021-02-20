@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">SuperHeroes Card Battle Game</string>
+    <string name="title_play">Play</string>
+    <string name="title_mycards">My Cards</string>
+    <string name="title_tryyourluck">Try Your Luck</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cards_left">Cards Left: </string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_login_in">Login</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="logout">Logout</string>
+    <string name="instructions">Instructions</string>
+    <string name="textinstructions">You will get a card from your deck (to see your deck click on MyCards tab at the botton of the page). Then you will choose a atribute that you think you can win with it, if you have the higher stat you win. You will play with 6 random card in your deck and you play 6 rounds (one for each card). If you win 3 times you get a chance to win a card from the cards of the opponent. Your goal is to collect all the 563 cards. GOOD LUCK!!</string>
+    <string name="start">Start</string>
+    <string name="spininfo">Spin the Wheel and try to win a Card</string>
+    <string name="your_card">Your Card</string>
+    <string name="choosestat">Choose the stat you want</string>
+    <string name="you_choose">You choose:</string>
+    <string name="opponent_card">Opponent Card</string>
+    <string name="play">Play</string>
+    <string name="next_round">Next Round</string>
+
+</resources>

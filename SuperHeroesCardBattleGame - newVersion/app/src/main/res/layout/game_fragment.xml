@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ui.play.GameFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/table"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <gabriel.medpel.superheroescardbattlegame.models.HeroCardView
+            android:id="@+id/hcYourCardView"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
+            android:layout_margin="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </gabriel.medpel.superheroescardbattlegame.models.HeroCardView>
+
+        <gabriel.medpel.superheroescardbattlegame.models.HeroCardView
+            android:id="@+id/hcOpponentCardView"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
+            android:layout_margin="4dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOpponentName">
+
+        </gabriel.medpel.superheroescardbattlegame.models.HeroCardView>
+
+
+        <TextView
+            android:id="@+id/tvYourCardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#C5C3C3"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/your_card"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:translationZ="90dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/hcCardReceived"
+            app:layout_constraintStart_toStartOf="@+id/hcCardReceived"
+            app:layout_constraintTop_toBottomOf="@+id/tvOpponentName" />
+
+        <TextView
+            android:id="@+id/tvCombatGameInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FF7070"
+            android:fontFamily="sans-serif-black"
+            android:text="  Combat"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvCombatGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0  "
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvPowerGameInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FF7070"
+            android:fontFamily="sans-serif-black"
+            android:text="  Power"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvCombatGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvPowerGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0  "
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvCombatGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvDurabilityGameInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FF7070"
+            android:fontFamily="sans-serif-black"
+            android:text="  Durability"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvPowerGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvDurabilityGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0  "
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvPowerGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvSpeedGameInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FF7070"
+            android:fontFamily="sans-serif-black"
+            android:text="  Speed"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvDurabilityGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvSpeedGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0  "
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvDurabilityGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvStrengthGameInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FF7070"
+            android:fontFamily="sans-serif-black"
+            android:text="  Strength"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvSpeedGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvStrengthGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0  "
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvSpeedGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvIntelligenceGameInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FF7070"
+            android:fontFamily="sans-serif-black"
+            android:text="  Inteligence"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvStrengthGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvIntelligenceGame"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0  "
+            android:textAlignment="textEnd"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvStrengthGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/hcYourCardView" />
+
+        <TextView
+            android:id="@+id/tvStatusInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Dealing your Card..."
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/hcYourCardView"
+            app:layout_constraintEnd_toEndOf="@+id/tvIntelligenceGame"
+            app:layout_constraintStart_toStartOf="@+id/hcCardReceived"
+            app:layout_constraintTop_toBottomOf="@+id/hcOpponentCardView" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/play"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="#000000"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnNextRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/next_round"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="#000000"
+            app:strokeWidth="2dp" />
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Finish"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="#000000"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/tvYourStatInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Your stat"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOpponentName" />
+
+        <TextView
+            android:id="@+id/tvOppStatInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Opponent stat"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintTop_toBottomOf="@+id/tvYourStat" />
+
+        <TextView
+            android:id="@+id/tvYourStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Your stat: 0"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvYourStatInfo" />
+
+        <TextView
+            android:id="@+id/tvOppStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Opponent stat: 0"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintTop_toBottomOf="@+id/tvOppStatInfo" />
+
+        <TextView
+            android:id="@+id/tvWhoWon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="WHO WON!!!"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <TextView
+            android:id="@+id/tvChosenStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Choosen stat: 0"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/btnPlay"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvYouChooseInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/you_choose"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tvChosenStat"
+            app:layout_constraintEnd_toStartOf="@+id/hcOpponentCardView"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.64" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <TextView
+            android:id="@+id/tvOpponentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="You are playing against..."
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

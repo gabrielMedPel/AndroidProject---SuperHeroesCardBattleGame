@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_mycards">
+
+    <activity
+        android:id="@+id/navigation_login"
+        android:name="gabriel.medpel.superheroescardbattlegame.ui.login.LoginActivity"
+        android:label="Login"
+        tools:layout="@layout/activity_login"
+        />
+    <fragment
+        android:id="@+id/navigation_sigin"
+        android:name="gabriel.medpel.superheroescardbattlegame.ui.login.SigninFragment"
+        android:label="Sign in"
+        tools:layout="@layout/fragment_signin" />
+
+    <fragment
+        android:id="@+id/navigation_play"
+        android:name="gabriel.medpel.superheroescardbattlegame.ui.play.PlayFragment"
+        android:label="Play"
+        tools:layout="@layout/fragment_play" />
+
+    <fragment
+        android:id="@+id/navigation_mycards"
+        android:name="gabriel.medpel.superheroescardbattlegame.ui.mycards.MyCardsFragment"
+        android:label="@string/title_mycards"
+        tools:layout="@layout/fragment_mycards" />
+
+    <fragment
+        android:id="@+id/navigation_tryyourluck"
+        android:name="gabriel.medpel.superheroescardbattlegame.ui.tryyourluck.TryYourLuckFragment"
+        android:label="@string/title_tryyourluck"
+        tools:layout="@layout/fragment_tryyourluck" />
+</navigation>
